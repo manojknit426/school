@@ -4,9 +4,13 @@ Rails.application.routes.draw do
  
 
   resources :schooldata
- get 'schools/school_signup'
+ match '/signup',  to: 'schools#school_signup',            via: 'get'
+ #get 'schools/school_signup'
  post 'schools/reg'
-get 'schools/homepage'
+ get 'schools/homepage'
+get '/schools/school_signin'
+post 'schools/school_login'
+
 #map.connect
   resources :users
 

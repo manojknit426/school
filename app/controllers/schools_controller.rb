@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
 def homepage
-  
+ # session[:SCHOOL_NAME]="manoj"
 end
 
 def school_signup
@@ -13,9 +13,23 @@ def reg
 
     #respond_to do |format|
       if @school.save
+ 
+ # flash.now[:error]="susscefully create"
   # redirect_to "/schools/school_signup"
       end
 end
+def school_signin
+  @school=School.new
+end
+def school_login
+  
+    email = params[:user][:email]
+    
+     password = params[:user][:password]
+   # user = School.authenticate_by_email(email, password)
+    redirect_to "/schools/homepage"
+  end
+
 def schoolhomepage
   
 end
