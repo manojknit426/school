@@ -26,12 +26,29 @@ def school_login
     email = params[:user][:email]
     
      password = params[:user][:password]
-   # user = School.authenticate_by_email(email, password)
-    redirect_to "/schools/homepage"
-  end
+   user = School.authenticate(email)
+  if user
+    
+   session[:user]=email
+    
 
-def schoolhomepage
-  
+    redirect_to "/schools/school_home_page"
+ else
+   redirect_to "/schools/school_signin"
+  end
+end
+def school_home_page
+  if session[:user]!=nil
+ @school=School.new
+ @school=School.first
+  render layout: 'school_main'
+  else 
+     redirect_to "/schools/school_signin"
+  end
+end
+def logout
+  session[:user]=nil
+  redirect_to "/schools/homepage"
 end
 def user_params
     params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state)

@@ -1,11 +1,8 @@
 class School < ActiveRecord::Base
-def self.authenticate_by_email(email, password)
-    user = find_by_email(email)
-    if user 
-      
-    else
-      nil
-    end
+#validates_confirmation_of :email
+def self.authenticate(email)
+    user = School.find_by_email(email)
+    user
   end
 
 end

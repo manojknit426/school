@@ -9,8 +9,9 @@ Rails.application.routes.draw do
  post 'schools/reg'
  get 'schools/homepage'
 get '/schools/school_signin'
-post 'schools/school_login'
-
+post '/schools/school_login'
+get '/schools/school_home_page'
+get '/schools/logout'
 #map.connect
   resources :users
 
