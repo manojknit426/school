@@ -1,0 +1,2 @@
+module SchoolsignupsHelper
+end

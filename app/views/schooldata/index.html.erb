@@ -1,0 +1,58 @@
+<% provide(:title, 'Home') %>
+<h1>Listing schooldata</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th>Schoolcode</th>
+     <th>tEST</th>
+      <th>Schoolname</th>
+      <th>Branchname</th>
+      <th>Fromstd</th>
+      <th>Tostd</th>
+      <th>Boardcode</th>
+      <th>Registerunder</th>
+      <th>Schoolownershiptype</th>
+      <th>Yearofestb</th>
+      <th>Website</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Pictlink</th>
+      <th>Isactive</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schooldata.each do |schooldatum| %>
+      <tr>
+        <td><%= schooldatum.Schoolcode %></td>
+        <td><%= schooldatum.test %></td>
+        <td><%= schooldatum.schoolname %></td>
+       
+        <td><%= schooldatum.branchname %></td>
+        <td><%= schooldatum.fromstd %></td>
+        <td><%= schooldatum.tostd %></td>
+        <td><%= schooldatum.boardcode %></td>
+        <td><%= schooldatum.registerunder %></td>
+        <td><%= schooldatum.schoolownershiptype %></td>
+        <td><%= schooldatum.yearofestb %></td>
+        <td><%= schooldatum.website %></td>
+        <td><%= schooldatum.email %></td>
+        <td><%= schooldatum.phone %></td>
+        <td><%= schooldatum.pictlink %></td>
+        <td><%= schooldatum.isactive %></td>
+        <td><%= link_to 'Show', schooldatum %></td>
+        <td><%= link_to 'Edit', edit_schooldatum_path(schooldatum) %></td>
+        <td><%= link_to 'Destroy', schooldatum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+<%= link_to 'New Schooldatum', new_schooldatum_path %>

@@ -1,0 +1,79 @@
+<% provide(:title, 'Signup') %>
+<%= form_for(@schooldatum) do |f| %>
+  <% if @schooldatum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schooldatum.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
+
+      <ul>
+      <% @schooldatum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  
+    <%= f.label :Schoolcode %><br>
+    <input type="text"  name="schooldatum[Schoolcode]"/>
+  </div>
+  <div class="field">
+  	<div class="field">
+    <%= f.label :test %><br>
+    <%= f.text_field :test%>
+  </div>
+    <%= f.label :schoolname %><br>
+    <%= f.text_field :schoolname %>
+  </div>
+  <div class="field">
+    <%= f.label :branchname %><br>
+    <%= f.text_field :branchname %>
+  </div>
+  <div class="field">
+    <%= f.label :fromstd %><br>
+    <%= f.text_field :fromstd %>
+  </div>
+  <div class="field">
+    <%= f.label :tostd %><br>
+    <%= f.text_field :tostd %>
+  </div>
+  <div class="field">
+    <%= f.label :boardcode %><br>
+    <%= f.text_field :boardcode %>
+  </div>
+  <div class="field">
+    <%= f.label :registerunder %><br>
+    <%= f.text_field :registerunder %>
+  </div>
+  <div class="field">
+    <%= f.label :schoolownershiptype %><br>
+    <%= f.text_field :schoolownershiptype %>
+  </div>
+  <div class="field">
+    <%= f.label :yearofestb %><br>
+    <%= f.text_field :yearofestb %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :pictlink %><br>
+    <%= f.text_field :pictlink %>
+  </div>
+  <div class="field">
+    <%= f.label :isactive %><br>
+    <%= f.number_field :isactive %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

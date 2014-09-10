@@ -1,0 +1,14 @@
+<% provide(:title, 'Signup') %>
+<%= form_for(@signup) do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :SCHOOL_CODE %><br>
+    <input type="text"  name="school[SCHOOL_CODE]"/>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
