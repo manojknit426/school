@@ -29,13 +29,15 @@
      if session[:user]!=nil
      login="logout"
     link="/schools/logout"
+   school_name="Login as:"+session[:school_name]
     else
     	login="login"
     link="/schools/school_signin"
+   school_name=""
     end
       %>
       
-      
+       <span style="margin-left: 100px ;"><%=school_name%></span>
       <ul class="nav  navbar-right nav-pills ">
         <li><a href="/schools/homepage"><span></span>home</a></li>
        <%if session[:user]!=nil%>

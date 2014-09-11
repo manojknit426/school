@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 get '/schools/school_signin'
 post '/schools/school_login'
 get '/schools/school_home_page'
+get '/schools/school_profile'
 get '/schools/logout'
 #map.connect
   resources :users

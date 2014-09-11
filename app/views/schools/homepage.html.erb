@@ -1,5 +1,16 @@
 <% provide(:title, 'HOME') %>
+
 <div class="container">
+	  		<% if error!=nil%> 
+        <div class="error" ><ul><li><%=error%></li>
+        	
+        	
+        </ul>
+        	
+        	
+        </div>
+<% end %>
+                
 	  		   <div class="jumbotron">
 	  		   	  <img src="/schoolglobal.jpg" />
 	  	<p><%=session[:user]%></p>	

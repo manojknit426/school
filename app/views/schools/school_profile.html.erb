@@ -1,0 +1,33 @@
+<% u=session[:user]%>
+ <%if u!=nil%>
+ <% provide(:title,@school.SCHOOL_NAME) %> 
+ 
+  <div class="container">
+  <div class="panel panel-default">
+  	<div class="panel-heading">School profile</div>
+  	<div class="panel-body">
+  		<p><%=@school.SCHOOL_NAME%></p>
+  		<p><%=@school.email%></p>
+  		<p><%=@school.phone1%></p>
+  		<p><%=@school.board_code%></p>
+  		<p><%=@school.registered_Under%></p>
+  		<p><%=@school.webSite%></p>
+  		<p><%=@school.city%></p>
+  		<p><%=@school.state%></p>
+  		
+  		
+  		
+  		
+  		
+  	</div>
+  	
+  	
+  </div>
+ 
+   
+    
+    </div>
+
+    
+  
+<%end%>
