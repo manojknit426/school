@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: schoolglobal
-  username: schoolglobal
-  password: <%= ENV['SCHOOLGLOBAL_DATABASE_PASSWORD'] %>
+  database: schools-global
+    password: <%= ENV['SCHOOLGLOBAL_DATABASE_PASSWORD'] %>
