@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
  
 
-  resources :schooldata
- match '/signup',  to: 'schools#school_signup',            via: 'get'
+  match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
  #get 'schools/school_signup'
  post 'schools/reg'
  get 'schools/homepage'

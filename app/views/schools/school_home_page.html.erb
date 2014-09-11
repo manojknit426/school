@@ -1,21 +1,19 @@
-
-  <div>
-    <header>
-      <h1><%u=session[:user]%></h1>
-    </p>
-    </nav>
-
-    <div>
-      <%if u=!nil %>
-  
- <p><%=@school.SCHOOL_NAME%></p>
-  <p><%=@school.email%></p>
-   <p><%=@school.city%></p>
+<% u=session[:user]%>
+ <%if u!=nil%>
+ <% provide(:title,@school.SCHOOL_NAME) %> 
+ 
+  <div class="container">
+  <div class="jumbotron">
+  	<img src="aa.jpg" />
+  	
+  	
+  	
+  </div>
+ 
    
-   <%end%>  
+    
     </div>
 
-    <footer>
-     <p>&copy; Copyright  by mnj</p>
-    </footer>
-  </div>
+    
+  
+<%end%>

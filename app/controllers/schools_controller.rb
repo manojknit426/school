@@ -11,15 +11,16 @@ def reg
   
 @school = School.new(user_params)
 
-    #respond_to do |format|
+    
       if @school.save
  
-  flash.now[:sussces]="susscefully create"
+  #flash.now[:sussces]="susscefully create"
    
     else 
-     
-      redirect_to "/signup",error:"error occer"
-      
+     respond_to do |format|
+      format.html { render 'school_signup' }
+        format.json { render json: @school.errors, status: :unprocessable_entity }
+end
       end
 end
 def school_signin
@@ -40,7 +41,7 @@ def school_login
 
     redirect_to "/schools/school_home_page"
  else
-   redirect_to "/schools/school_signin",error:"Email or Paawsord are wrong!!!!!!!!"
+   redirect_to "/schools/school_signin",error:"Email or Paasword are wrong!!!!!!!!"
  
   end
 end
@@ -58,6 +59,6 @@ def logout
   redirect_to "/schools/homepage"
 end
 def user_params
-    params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:confirm_password)
+    params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:password_confirmation)
   end
 end

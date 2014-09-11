@@ -1,27 +1,24 @@
 <% provide(:title, 'Signup') %>
-<% if @school.errors.any? %>
-<p>
-	<%=error%>
-</p>
-    <div id="error_explanation">
-      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
-ttttt      <ul>
-      <% @school.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="container" style="background-color:#245269;" >
-  <p>
-	<%=error%>
-</p>
-    <div class="row well"  >
+
+  <div class="container">
+ 
+    <div class="row"  >
         <form role="form" action="/schools/reg"  method="post">
             <div class="col-lg-6 col-lg-offset-3">
                 <div class="panel panel-default">
-               <div class="panel-heading"><strong>SCHOOL REGISTRATION</strong></div>
+               <div class="panel-heading"><strong>SCHOOL REGISTRATION</strong><% if @school.errors.any? %>
+
+    <div id="error_explanation">
+      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
+      <ul>
+      <% @school.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    
+      <% end %>
+      </ul>
+    </div>
+  <% end %></div>
                <div class="panel-body">
                 
                 <div class="form-group" align="middle">Basic Info:
