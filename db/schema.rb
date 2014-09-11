@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905184609) do
+ActiveRecord::Schema.define(version: 20140911123816) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20140905184609) do
     t.string   "is_Active",            limit: 1
     t.string   "city",                 limit: 20
     t.string   "state",                limit: 30
+    t.string   "password_digest"
   end
 
   create_table "schoolsignups", force: true do |t|

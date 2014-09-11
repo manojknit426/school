@@ -51,6 +51,6 @@ def logout
   redirect_to "/schools/homepage"
 end
 def user_params
-    params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state)
+    params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:confirm_password)
   end
 end
