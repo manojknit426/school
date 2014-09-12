@@ -1,9 +1,11 @@
 <% provide(:title, 'Signup') %>
 <% if @school.errors.any? %>
+<p>
+	<%=error%>
+</p>
     <div id="error_explanation">
       <h2><%= pluralize(@school.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
-
-      <ul>
+ttttt      <ul>
       <% @school.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -12,6 +14,9 @@
   <% end %>
 
   <div class="container" style="background-color:#245269;" >
+  <p>
+	<%=error%>
+</p>
     <div class="row well"  >
         <form role="form" action="/schools/reg"  method="post">
             <div class="col-lg-6 col-lg-offset-3">

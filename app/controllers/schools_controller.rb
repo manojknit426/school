@@ -14,19 +14,25 @@ def reg
     #respond_to do |format|
       if @school.save
  
- # flash.now[:error]="susscefully create"
-  # redirect_to "/schools/school_signup"
+  flash.now[:sussces]="susscefully create"
+   
+    else 
+     
+      redirect_to "/signup",error:"error occer"
+      
       end
 end
 def school_signin
   @school=School.new
 end
+
 def school_login
   
     email = params[:user][:email]
     
      password = params[:user][:password]
-   user = School.authenticate(email)
+   user = School.auth(email,password)
+ 
   if user
     
    session[:user]=email
@@ -34,13 +40,14 @@ def school_login
 
     redirect_to "/schools/school_home_page"
  else
-   redirect_to "/schools/school_signin"
+   redirect_to "/schools/school_signin",error:"Email or Paawsord are wrong!!!!!!!!"
+ 
   end
 end
 def school_home_page
   if session[:user]!=nil
  @school=School.new
- @school=School.first
+ @school=School.find_by email:session[:user]
   render layout: 'school_main'
   else 
      redirect_to "/schools/school_signin"

@@ -25,20 +25,29 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
+      <%
+     if session[:user]!=nil
+     login="logout"
+    link="/schools/logout"
+    else
+    	login="login"
+    link="/schools/school_signin"
+    end
+      %>
+      
       
       <ul class="nav  navbar-right nav-pills ">
         <li><a href="/schools/homepage"><span></span>home</a></li>
        <%if session[:user]!=nil%>
        <li><a href="/schools/school_home_page"><span></span>School home</a></li>
       <%end%>
-        <li><a href="/schools/school_signin">login</a></li>
+        
+        <li><a href="<%=link%>"><%=login%></a></li>
+        <%if session[:user]==nil %>
         <li><a href="/signup">signup</a></li>
+       <%end%>
         <li><a href="#"><span class="glyphicon glyphicon-globe" style="font-size: 16px"></span></a></li>
-       <%if session[:user]!=nil%>
-
-        <li><a href="/schools/logout">log out</a></li>
-        <%end%>
-        <li class="dropdown">
+               <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -57,7 +66,9 @@
     <div class="container-fluid">
       <%= yield %>
     </div>
-<footer class="container-fluid">footer</footer>
+<footer class="container-fluid"> 
+     <p>&copy; Copyright  by <strong>sG</strong></p>
+   </footer>
 </div>
 
 </body>
