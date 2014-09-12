@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  
-
- 
 
   match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
  #get 'schools/school_signup'
