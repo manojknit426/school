@@ -9,6 +9,8 @@ post '/schools/school_login'
 get '/schools/school_home_page'
 get '/schools/school_profile'
 get '/schools/logout'
+get 'schools/school_image'
+post 'schools/school_image_upload'
 #map.connect
   resources :users
 

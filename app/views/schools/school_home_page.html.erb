@@ -1,8 +1,10 @@
 <% u=session[:user]%>
  <%if u!=nil%>
  <% provide(:title,@school.SCHOOL_NAME) %> 
- 
-  
+ <div class="container">
+   <div class="row">
+   <div class="col-md-2" style="background-color: red">Left content</div>
+    <div class="col-md-8" style="background-color: green">
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -12,7 +14,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/school1.jpg" alt="First slide">
+          <img src="/schoolglobal.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
              cc
@@ -39,7 +41,10 @@
       <a class="left carousel-control"  href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-
+</div>
+<div class="col-md-2" style="background-color: red">Right content</div>
+ </div>
+</div>
 
 
  
