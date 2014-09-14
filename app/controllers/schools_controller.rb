@@ -13,7 +13,7 @@ def reg
 
     
       if @school.save
- 
+  ConfirmEmail.send_confirm_email(@school).deliver
   #flash.now[:sussces]="susscefully create"
    
     else 

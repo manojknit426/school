@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20140912190203) do
     t.datetime "updated_at"
   end
 
-  create_table "schools", primary_key: "SCHOOL_ID", force: true do |t|
+  create_table "schools", force: true do |t|
     t.string   "SCHOOL_CODE",          limit: 25
     t.string   "SCHOOL_NAME",          limit: 30
     t.string   "branch_name",          limit: 30
