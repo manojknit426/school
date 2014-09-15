@@ -12,6 +12,7 @@ get '/schools/logout'
 get '/schools/school_image'
 post '/schools/school_image_upload'
 get '/schools/school_activation'
+get '/schools/total_school'
 #map.connect
   resources :users
 
