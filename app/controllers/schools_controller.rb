@@ -10,10 +10,10 @@ end
 def reg
   
 @school = School.new(user_params)
-
+@school.activation_token=SecureRandom.urlsafe_base64
     
       if @school.save
-  ConfirmEmail.send_confirm_email(@school).deliver
+ ConfirmEmail.send_confirm_email(@school).deliver
   #flash.now[:sussces]="susscefully create"
    
     else 
@@ -22,6 +22,21 @@ def reg
         format.json { render json: @school.errors, status: :unprocessable_entity }
 end
       end
+end
+#school_activation
+def school_activation
+  email=params[' e']
+  token=params.first[0]
+  data= School.find_by_email(email)
+  datatoken=data.activation_token
+  
+  if datatoken==token
+    data.update_attribute :is_Active, 1
+ 
+  redirect_to '/schools/school_signin',sussces:"susscesfully varified please login"
+ 
+  end
+  
 end
 # end school signup
 
@@ -39,14 +54,19 @@ def school_login
    user = School.auth(email,password)
  
   if user
-    
+    active=School.find_by_email(email).is_Active 
+  if active=='1'
    session[:user]=email
    session[:school_name]=School.find_by_email(email).SCHOOL_NAME
 
     redirect_to "/schools/school_home_page"
+
+else
+
+  redirect_to "/schools/school_signin",error:"you are not varified !!!!!!!!"
+end
  else
-   
-   redirect_to "/schools/school_signin",error:"Email or Paasword are wrong!!!!!!!!"
+  redirect_to "/schools/school_signin",error:"Email or Paasword are wrong!!!!!!!!"
  
   end
 end

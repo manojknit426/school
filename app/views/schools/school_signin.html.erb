@@ -7,9 +7,9 @@
   <div class="col-md-6 col-md-offset-3">
   
   <div class="panel panel-default  ">
-      <div class="panel-heading"><h5>Login</h5><%if error%>
+      <div class="panel-heading"><h5>Login</h5><%if error ||sussces%>
 
-        <div class="error" ><ul><li><%=error%></li>
+        <div class="error" ><ul><li><%=error%><span style="color: green"><%=sussces%></span></li>
         	
         	
         </ul>

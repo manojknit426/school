@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912190203) do
+ActiveRecord::Schema.define(version: 20140915035637) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20140912190203) do
     t.datetime "modified_On"
     t.string   "modifier_Info",        limit: 50
     t.string   "modification_Args",    limit: 100
-    t.string   "is_Active",            limit: 1
+    t.string   "is_Active",                        default: "0", null: false
     t.string   "city",                 limit: 20
     t.string   "state",                limit: 30
     t.string   "password_digest"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 20140912190203) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "activation_token"
   end
 
   create_table "schoolsignups", force: true do |t|

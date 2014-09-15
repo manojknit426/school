@@ -2,15 +2,16 @@ Rails.application.routes.draw do
 
   match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
  #get 'schools/school_signup'
- post 'schools/reg'
- get 'schools/homepage'
+ post '/schools/reg'
+ get '/schools/homepage'
 get '/schools/school_signin'
 post '/schools/school_login'
 get '/schools/school_home_page'
 get '/schools/school_profile'
 get '/schools/logout'
-get 'schools/school_image'
-post 'schools/school_image_upload'
+get '/schools/school_image'
+post '/schools/school_image_upload'
+get '/schools/school_activation'
 #map.connect
   resources :users
 
