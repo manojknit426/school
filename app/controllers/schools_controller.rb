@@ -63,7 +63,7 @@ def school_login
 
 else
 
-  redirect_to "/schools/school_signin",error:"you are not varified !!!!!!!!"
+  redirect_to "/schools/school_signin",error:"you are not varified  check your email!!!!!!!!"
 end
  else
   redirect_to "/schools/school_signin",error:"Email or Paasword are wrong!!!!!!!!"
@@ -119,5 +119,13 @@ end
 def user_params
     params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:password_confirmation)
   end
+def total_school
+ @school=School.all 
+end
+def school_delete
+id=params['id']
+  school=School.find_by_SCHOOL_ID(id).destroy
+  redirect_to '/schools/total_school'
+end
 end
 

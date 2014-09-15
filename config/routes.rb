@@ -13,9 +13,8 @@ get '/schools/school_image'
 post '/schools/school_image_upload'
 get '/schools/school_activation'
 get '/schools/total_school'
+get '/schools/school_delete'
 #map.connect
-  resources :users
-
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
