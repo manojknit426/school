@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'passwords/forgot_password'
+
   match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
  #get 'schools/school_signup'
  post '/schools/reg'
@@ -14,6 +16,10 @@ post '/schools/school_image_upload'
 get '/schools/school_activation'
 get '/schools/total_school'
 get '/schools/school_delete'
+get '/passwords/forgot_password'
+ post  "/passwords/send_password"
+get '/passwords/reset_password'
+post '/passwords/new_password'
 #map.connect
   # See how all your routes lay out with "rake routes".
 

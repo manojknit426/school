@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915035637) do
+ActiveRecord::Schema.define(version: 20140915153834) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20140915035637) do
     t.datetime "updated_at"
   end
 
-  create_table "schools", force: true do |t|
+  create_table "schools", primary_key: "SCHOOL_ID", force: true do |t|
     t.string   "SCHOOL_CODE",          limit: 25
     t.string   "SCHOOL_NAME",          limit: 30
     t.string   "branch_name",          limit: 30
@@ -148,6 +148,8 @@ ActiveRecord::Schema.define(version: 20140915035637) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "activation_token"
+    t.string   "password_reset_token"
+    t.string   "password_expires"
   end
 
   create_table "schoolsignups", force: true do |t|
