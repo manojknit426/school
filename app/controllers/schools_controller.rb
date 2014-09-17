@@ -95,23 +95,8 @@ else
 end
 end  
 
-#upload image
-  def school_image
-  @school=School.new  
-  end
-def school_image_upload
- imagename = params[:image][:avatar]
-  @school = School.find_by email:session[:user]
-if @school.update(avatar: imagename)
-redirect_to '/schools/school_home_page'
-else
-  respond_to do |format|
-      format.html { render 'schools/school_image' }
-        format.json { render json: @school.errors, status: :unprocessable_entity }
-end
-end
 
-end
+
 # end of school page
 #school log out page
 def logout
