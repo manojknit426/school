@@ -1,10 +1,34 @@
 <% u=session[:user]%>
+ 
  <%if u!=nil%>
- <% provide(:title,@school.SCHOOL_NAME) %> 
+ <% src1='/schoolglobal.jpg'  
+   src2='/schoolglobal.jpg'  
+  src3='/schoolglobal.jpg'  
+ %>
+<% if  @school_image.length==0
+  src1='/schoolglobal.jpg'  
+   src2='/schoolglobal.jpg'  
+  src3='/schoolglobal.jpg' 
+  
+elsif @school_image.length==1
+src1=@school_image.first.image_url.to_s
+
+elsif @school_image.length==2
+src1=@school_image.first.image_url.to_s
+src2=@school_image.second.image_url.to_s
+
+elsif @school_image.length>=3
+src1=@school_image.first.image_url.to_s
+src2=@school_image.second.image_url.to_s
+src3=@school_image.third.image_url.to_s
+
+ %>
+ <% end %>
+  <% provide(:title,@school.SCHOOL_NAME) %> 
  <div class="container">
    <div class="row">
    <div class="col-md-2" style="background-color: red">Left content</div>
-    <div class="col-md-8" style="background-color: green">
+    <div class="col-md-8">
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -14,15 +38,15 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="/schoolglobal.jpg" alt="First slide">
+          <img src="<%=src1.to_s%>" alt="First slide">
           <div class="container">
-            <div class="carousel-caption">
-             cc
+            <div class="carousel-caption" style="display:none" id='c1'>
+             first
               </div>
           </div>
         </div>
         <div class="item" >
-          <img src="/schoolglobal.jpg" alt="Second slide">
+          <img src="<%=src2%>" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               cc
@@ -30,7 +54,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="/schoolglobal.jpg" alt="Third slide">
+          <img src="<%=src3%>" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               nn
@@ -44,6 +68,19 @@
 </div>
 <div class="col-md-2" style="background-color: red">Right content</div>
  </div>
+<script>
+	$(document).ready(function(){
+
+$("#myCarousel").hover( function() {
+    $("#c1").show();
+     
+     
+    
+});
+    });
+	
+	
+</script>
 </div>
 
 

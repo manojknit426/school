@@ -11,8 +11,8 @@ post '/schools/school_login'
 get '/schools/school_home_page'
 get '/schools/school_profile'
 get '/schools/logout'
-get '/schools/school_image'
-post '/schools/school_image_upload'
+get '/school_images/school_image'
+post '/school_images/school_image_upload'
 get '/schools/school_activation'
 get '/schools/total_school'
 get '/schools/school_delete'
@@ -20,6 +20,7 @@ get '/passwords/forgot_password'
  post  "/passwords/send_password"
 get '/passwords/reset_password'
 post '/passwords/new_password'
+
 #map.connect
   # See how all your routes lay out with "rake routes".
 

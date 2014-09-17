@@ -76,9 +76,12 @@ def school_home_page
   if session[:user]!=nil
  @school=School.new
  @school=School.find_by email:session[:user]
+ @school_image=SchoolImage.new
+ @school_image=SchoolImage.where(email: session[:user]).to_a
+  
   render layout: 'school_main'
   else 
-     redirect_to "/schools/school_signin"
+     redirect_to "/schools/school_signin",error: 'please login'
   end
 end
 # start profile part of school

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915153834) do
+ActiveRecord::Schema.define(version: 20140917073437) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20140915153834) do
     t.datetime "modified_On"
     t.string   "modified_by",      limit: 50
     t.string   "is_Active",        limit: 1
+  end
+
+  create_table "school_images", force: true do |t|
+    t.integer  "school_SCHOOL_ID"
+    t.string   "image"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "school_master", primary_key: "SCHOOL_ID", force: true do |t|
