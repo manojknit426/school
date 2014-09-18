@@ -4,13 +4,24 @@
     <div id="error_explanation">
       <h2><%= pluralize(@school_image.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
       <ul>
-      <% @school.errors.full_messages.each do |message| %>
+      <% @school_image.errors.full_messages.each do |message| %>
         <li><%= message %></li>
     
       <% end %>
       </ul>
     </div>
   <% end %>
+	<%if error ||sussces%>
+
+        <div class="error" ><ul><li><%=error%><span style="color: green"><%=sussces%></span></li>
+        	
+        	
+        </ul>
+        	
+        	
+        </div>
+
+                 <%end%>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 	<form method="post" action="/school_images/school_image_upload" enctype="multipart/form-data" >

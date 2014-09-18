@@ -11,7 +11,7 @@
   src3='/schoolglobal.jpg' 
   
 elsif @school_image.length==1
-src1=@school_image.first.image_url.to_s
+src1=@school_image.first.image_url(:thumb).to_s
 
 elsif @school_image.length==2
 src1=@school_image.first.image_url.to_s
@@ -68,9 +68,15 @@ src3=@school_image.third.image_url.to_s
       <a class="left carousel-control"  href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
+
+
+
 </div>
+
 <div class="col-md-2" style="background-color: red">Right content</div>
+ 
  </div>
+
 <script>
 	$(document).ready(function(){
 

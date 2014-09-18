@@ -16,7 +16,14 @@ def school_image_upload
 if @school_image.save
   
   redirect_to '/schools/school_home_page'
+else
+ respond_to do |format|
+      format.html { render '/school_images/school_image' }
+        format.json { render json: @school_image.errors, status: :unprocessable_entity }
+
 end
+end
+
 end
 
 end

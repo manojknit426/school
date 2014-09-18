@@ -1,15 +1,17 @@
 <% provide(:title, 'HOME') %>
 
 <div class="container">
-	  		<% if error!=nil%> 
-        <div class="error" ><ul><li><%=error%></li>
+	  		<%if error ||sussces%>
+
+        <div class="error" ><ul><li><%=error%><span style="color: green"><%=sussces%></span></li>
         	
         	
         </ul>
         	
         	
         </div>
-<% end %>
+
+                 <%end%>
                 
 	  		   <div class="jumbotron">
 	  		   	 <div id="myCarousel" class="carousel slide" data-ride="carousel">
