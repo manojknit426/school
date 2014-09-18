@@ -8,20 +8,20 @@ def school_signup
 end
 
 def reg
-  
+
 @school = School.new(user_params)
 @school.activation_token=SecureRandom.urlsafe_base64
     
       if @school.save
  ConfirmEmail.send_confirm_email(@school).deliver
-  #flash.now[:sussces]="susscefully create"
-   
-    else 
+     redirect_to '/schools/school_signin',sussces: 'you are susscesfully signup please check your email id for varification'
+      else 
      respond_to do |format|
       format.html { render 'school_signup' }
         format.json { render json: @school.errors, status: :unprocessable_entity }
-end
+
       end
+end
 end
 #school_activation
 def school_activation

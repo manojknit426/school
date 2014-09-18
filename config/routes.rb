@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
  #get 'schools/school_signup'
  post '/schools/reg'
+ get 'schools/reg'
  get '/schools/homepage'
 get '/schools/school_signin'
 post '/schools/school_login'
