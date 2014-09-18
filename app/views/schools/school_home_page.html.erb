@@ -11,7 +11,7 @@
   src3='/schoolglobal.jpg' 
   
 elsif @school_image.length==1
-src1=@school_image.first.image_url(:thumb).to_s
+src1=@school_image.first.image_url.to_s
 
 elsif @school_image.length==2
 src1=@school_image.first.image_url.to_s
@@ -38,7 +38,7 @@ src3=@school_image.third.image_url.to_s
       </ol>
       <div class="carousel-inner"> 
         <div class="item active">
-          <img src="<%=src1.to_s%>" alt="First slide" >
+          <img src="<%=src1.to_s%>" alt="First slide" style="height: 278px">
           <div class="container">
             <div class="carousel-caption" >
           ist
