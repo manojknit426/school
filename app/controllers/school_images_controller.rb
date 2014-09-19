@@ -25,5 +25,9 @@ end
 end
 
 end
-
+def total_image
+ @school_image=SchoolImage.new
+ @school_image=SchoolImage.where(email: session[:user]).to_a
+  
+end
 end
