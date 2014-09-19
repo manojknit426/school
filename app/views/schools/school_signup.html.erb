@@ -7,18 +7,19 @@
         <form role="form" action="/schools/reg"  method="post">
             <div class="col-lg-6 col-lg-offset-3">
                 <div class="panel panel-default">
-               <div class="panel-heading"><strong>SCHOOL REGISTRATION</strong><% if @school.errors.any? %>
+               <div class="panel-heading"><strong>SCHOOL REGISTRATION</strong><%if error ||sussces%>
 
-    <div id="error_explanation">
-      <h2><%= pluralize(@school.errors.count, "error") %> prohibited this schooldatum from being saved:</h2>
-      <ul>
-      <% @school.errors.full_messages.each do |message| %>
+        <div class="error" ><ul><% error.each do |message| %>
         <li><%= message %></li>
-    
-      <% end %>
-      </ul>
-    </div>
-  <% end %></div>
+<span style="color: green"><%=sussces%></span></li>
+        	
+        	 <% end %>
+        </ul>
+        	
+        	
+        </div>
+
+                 <%end%></div>
                <div class="panel-body">
                 
                 <div class="form-group" align="middle">Basic Info:

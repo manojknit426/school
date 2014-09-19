@@ -16,9 +16,10 @@ def reg
  ConfirmEmail.send_confirm_email(@school).deliver
      redirect_to '/schools/school_signin',sussces: 'you are susscesfully signup please check your email id for varification'
       else 
+    
      respond_to do |format|
-      format.html { render 'school_signup' }
-        format.json { render json: @school.errors, status: :unprocessable_entity }
+      format.html { redirect_to '/signup' ,error: @school.errors.to_a}
+      
 
       end
 end
@@ -105,6 +106,7 @@ def logout
 end
 # taking sign up form data into params
 def user_params
+   
     params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:password_confirmation)
   end
 def total_school
