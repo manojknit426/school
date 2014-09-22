@@ -30,4 +30,9 @@ def total_image
  @school_image=SchoolImage.where(email: session[:user]).to_a
   
 end
+def delete_image
+  id=params['id']
+  school=SchoolImage.find_by_id(id).destroy
+  redirect_to '/school_images/total_image'
+end
 end

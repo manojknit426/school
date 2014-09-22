@@ -1,5 +1,12 @@
-<% @school_image.each do |image| %>
      
-        
+       
+   <% @school_image.each do |image| %>
+
+  
     <img  src="<%=image.image_url %>" class="img-thumbnail" style="width: 200px;height: 200px"/>
-        <%end%>
+   
+    <a href="/school_images/delete_image?id=<%= image.id %>" >delete</a>
+   
+   <%end%>   
+        
+ 
