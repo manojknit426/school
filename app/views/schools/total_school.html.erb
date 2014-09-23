@@ -24,8 +24,8 @@
    <td><%= school.city %></td>
    <td><%= school.state %></td>
    <td><%= school.is_Active %></td>
-  <td><a href="/schools/school_delete?id=<%=school.SCHOOL_ID%>"> delete</a></td>
-              </tr>
+  <td><a href="/schools/school_delete?id=<%=school.SCHOOL_ID%>" data-confirm="Are you sure?"> delete</a></td>
+             </tr>
    <%end%>
   </tbody>
 </table>

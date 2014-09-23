@@ -3,10 +3,63 @@
    <% @school_image.each do |image| %>
 
   
-    <img  src="<%=image.image_url %>" class="img-thumbnail" style="width: 200px;height: 200px"/>
+    <img  src="<%=image.image_url %>" class="image img-thumbnail" style="width: 200px;height: 200px" id="<%=image.id%>" data-toggle="modal" data-target=".bs-example-modal-lg"/>
    
-    <a href="/school_images/delete_image?id=<%= image.id %>" >delete</a>
+    <a href="/school_images/delete_image?id=<%= image.id %>"  data-confirm="Are you sure?">delete</a>
    
    <%end%>   
-        
  
+ 
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width: 70%" >
+    <div class="modal-content">
+     <div id="carousel-example-generic" class="carousel " data-ride="carousel">
+  <!-- Indicators -->
+  
+  <!-- Wrapper for slides -->
+  
+  <div class="carousel-inner">
+ 
+  <% @school_image.each do |image| %>
+    <div class="item" id="img_<%=image.id%>">
+      
+      <img src="<%=image.image_url%>" alt="...">
+    
+    </div>
+    <%end%>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+    </div>
+  </div>
+<script>
+	$(document).ready(function(){
+		var id='';
+		$('.image').click(function(){
+			
+	var v=$(this).attr('id');
+	id='#img_'+v;
+	
+	$(id).addClass('active');
+	
+		});
+		
+	$('.bs-example-modal-lg').on('hidden.bs.modal', function (e) {
+  
+$(id).removeClass('active');
+//alert(id);
+})	
+		
+	});
+	
+</script>
+</div>

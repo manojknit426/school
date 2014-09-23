@@ -72,13 +72,13 @@ end
   end
 end
 # end school signin
-# start  school home page ,profile ....imaage uploading
+# start  school home page ,profile ....image uploading
 def school_home_page
   if session[:user]!=nil
  @school=School.new
  @school=School.find_by email:session[:user]
  @school_image=SchoolImage.new
- @school_image=SchoolImage.where(email: session[:user]).to_a
+ @school_image=SchoolImage.order("id DESC").where(email: session[:user]).to_a
   
   render layout: 'school_main'
   else 
@@ -110,7 +110,7 @@ def user_params
     params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:password_confirmation)
   end
 def total_school
- @school=School.all 
+ @school=School.order("SCHOOL_ID DESC").all 
 end
 def school_delete
 id=params['id']

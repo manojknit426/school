@@ -27,7 +27,7 @@ end
 end
 def total_image
  @school_image=SchoolImage.new
- @school_image=SchoolImage.where(email: session[:user]).to_a
+ @school_image=SchoolImage.order("id DESC").where(email: session[:user]).to_a
   
 end
 def delete_image
