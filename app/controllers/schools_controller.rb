@@ -110,7 +110,7 @@ def user_params
     params.require(:schooldata).permit(:SCHOOL_NAME,:board_code,:registered_Under,:school_type,:webSite,:email,:estb_year,:phone1,:city,:state,:password,:password_confirmation)
   end
 def total_school
- @school=School.order("SCHOOL_ID DESC").all 
+ @school=School.all 
 end
 def school_delete
 id=params['id']
