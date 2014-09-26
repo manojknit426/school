@@ -25,7 +25,13 @@ src3=@school_image.third.image_url.to_s
  %>
  <% end %>
   <% provide(:title,@school.SCHOOL_NAME) %> 
- <div class="container">
+ <style>
+ 	.height{
+ 		
+ 		width: 100%;
+ 		height: 50%
+ 	}
+ </style>
    <div class="row">
    <div class="col-md-2" style="background-color: red">Left content</div>
     <div class="col-md-8">
@@ -38,7 +44,7 @@ src3=@school_image.third.image_url.to_s
       </ol>
       <div class="carousel-inner"> 
         <div class="item active">
-          <img src="<%=src1.to_s%>" alt="First slide" style="height: 450px;width:745px">
+          <img src="<%=src1.to_s%>" alt="First slide" style="height: 450px;width:100%">
           <div class="container">
             <div class="carousel-caption" >
           ist
@@ -47,7 +53,7 @@ src3=@school_image.third.image_url.to_s
           </div>
         </div>
         <div class="item" >
-          <img src="<%=src2%>" alt="Second slide" style="height: 450px;width:745px">
+          <img src="<%=src2%>" alt="Second slide" style="height: 450px;width:100%">
           <div class="container">
             <div class="carousel-caption">
               cc
@@ -56,7 +62,7 @@ src3=@school_image.third.image_url.to_s
           </div>
         </div>
         <div class="item">
-          <img src="<%=src3%>" alt="Third slide" style="height: 450px;width:745px">
+          <img src="<%=src3%>" alt="Third slide" style="height: 450px;width:100%">
           <div class="container">
             <div class="carousel-caption">
               nn
@@ -78,7 +84,6 @@ src3=@school_image.third.image_url.to_s
  </div>
 
 
-</div>
 
 
  

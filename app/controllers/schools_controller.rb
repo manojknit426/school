@@ -1,7 +1,7 @@
 class SchoolsController < ApplicationController
 def homepage
- # session[:SCHOOL_NAME]="manoj"
-end
+render layout: 'home'
+ end
 #  start school signup ,validation ,and inter data in database
 def school_signup
   @school=School.new
