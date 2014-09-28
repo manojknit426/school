@@ -1,0 +1,103 @@
+<div class="container">
+	<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	
+	
+	<div class="panel panel-default">
+	
+		
+		<div class="panel-heading">
+			<div class="panel-title">Create Your Profile</div>
+			
+		</div>
+		
+		<div class="panel-body">
+		
+		 <div class="col-md-8">
+		 	
+		 	<div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="first_name" name="schooldata[SCHOOL_NAME]" placeholder="First Name" required autocomplete="true">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                       <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="last_name" name="schooldata[SCHOOL_NAME]" placeholder=" Last Name" required autocomplete="true">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                       
+		 	  <div class="form-group">
+                    <label for="grade">Grade</label>
+                   <div class="input-group">
+                         <select name="schooldata[grade]" id="grade" class="form-control">
+                  <option>1st</option>
+                  <option>2nd</option>
+                  <option>3rd</option>
+                  <option>4th</option>
+                  <option>5th</option>
+                  <option>6th</option>
+                  <option>7th</option>
+                  <option>8th</option>
+                </select>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                   <div class="input-group">
+                         <select name="schooldata[subject]" id="subject" class="form-control">
+                  <option>Hindi</option>
+                  <option>English</option>
+                <option>Mathematics</option>
+                 <option>English</option>
+                  <option>English</option>
+                   <option>English</option>
+                    <option>English</option>
+                </select>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div> 
+                </div>
+		 	<input type="submit" value="Create profile" class="btn btn-primary"/>
+		 </div>	
+			
+			
+			<div class="col-md-4 " style="margin-top: 50px;">
+				
+				<div class=" well  ">
+				<form  role="form" data-remote='true' action="/teachers/teacher_profile_upload" method="post"  enctype="multipart/form-data">
+					<img id="img_here" src="" class='img-thumbnail' style="width: 150px;height: 150px"/>
+					   <input type="file" name="user[image]"  >
+               <input type="submit"  id="t_image" />                
+                  				
+				</form>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="panel-footer">footer</div>
+		
+		
+		
+	</div>
+	
+	
+	</div>
+	
+	</div>
+<script>
+$(document).ready(function(){
+	
+	$('#t_image').click(function(){
+	$("#img_here").attr("src","/load.gif");
+	
+});
+
+	
+});
+</script>
+</div>

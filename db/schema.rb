@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917073437) do
+ActiveRecord::Schema.define(version: 20140928125502) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -161,6 +161,26 @@ ActiveRecord::Schema.define(version: 20140917073437) do
   end
 
   create_table "schoolsignups", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teacher_profiles", force: true do |t|
+    t.string   "title"
+    t.string   "lastname"
+    t.string   "grade"
+    t.string   "subject"
+    t.string   "image"
+    t.string   "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teachers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.integer  "mobile",          limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+//= require jquery.remotipart
 //=require schools
 // Include all twitter's javascripts
 //= require twitter/bootstrap

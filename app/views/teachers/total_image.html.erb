@@ -1,0 +1,13 @@
+     
+       
+   <% @teacher.each do |image| %>
+
+  
+    <img  src="<%=image.image_url %>" class="image img-thumbnail" style="width: 200px;height: 200px" id="<%=image.id%>" data-toggle="modal" data-target=".bs-example-modal-lg"/>
+   
+    <a href="/teachers/delete_image?id=<%= image.id %>"  >delete</a>
+   
+   <%end%>   
+ 
+ 
+

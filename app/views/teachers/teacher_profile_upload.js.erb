@@ -1,0 +1,7 @@
+
+<% if remotipart_submitted? %>
+
+  $("#img_here").attr("src","<%=@teacher.image_url%>");
+<% else %>
+  alert('submitted via native jquery-ujs')
+<% end %>

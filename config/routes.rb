@@ -23,6 +23,11 @@ get '/passwords/reset_password'
 post '/passwords/new_password'
 get '/school_images/total_image'
 get "/school_images/delete_image"
+post "/teachers/teacher_reg"
+get "/teachers/teacher_profile"
+post 'teachers/teacher_profile_upload'
+get '/teachers/total_image'
+get "/teachers/delete_image"
 #map.connect
   # See how all your routes lay out with "rake routes".
 
