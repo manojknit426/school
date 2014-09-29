@@ -1,7 +1,7 @@
 class Teacher < ActiveRecord::Base
-has_one :teacher_profile
+#has_one :teacher_profile
 has_secure_password 
-  validates_uniqueness_of :email
+ validates_uniqueness_of :email
 
 validates :password, length: { in: 6..20 }
 validates_confirmation_of :password ,on:create

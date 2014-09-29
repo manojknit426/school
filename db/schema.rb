@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928125502) do
+ActiveRecord::Schema.define(version: 20140929092232) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -165,24 +165,37 @@ ActiveRecord::Schema.define(version: 20140928125502) do
     t.datetime "updated_at"
   end
 
+  create_table "teacher_images", force: true do |t|
+    t.string   "email"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "teacher_profiles", force: true do |t|
     t.string   "title"
     t.string   "lastname"
     t.string   "grade"
     t.string   "subject"
-    t.string   "image"
     t.string   "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "name"
+    t.integer  "t_mobile",   limit: 8
+    t.integer  "is_profile",           default: 0
   end
 
   create_table "teachers", force: true do |t|
-    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "mobile",          limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_reset_token"
+    t.string   "password_expires"
+    t.string   "activation_token"
+    t.integer  "is_active"
+    t.integer  "is_profile",           default: 0
   end
 
   create_table "user_master", primary_key: "user_id", force: true do |t|

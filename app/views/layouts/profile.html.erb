@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title ><%=  yield(:title) %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<style>
+	
+</style>
+</head>
+
+<body ><div class="container-fluid">
+    <header class="navbar ">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+                 <div class="container-fluid">
+   
+    
+                 <a class="navbar-brand" href="/schools/homepage">schoolGlobal</a>
+                  
+                     </div>
+  <a href="/schools/logout" class="nav nav-pills navbar-default navbar-right" style="margin-right: 200px">Logout</a>
+      
+    
+    </header>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+<footer class="container-fluid" style="margin-top: 100px"> 
+     <p>&copy; Copyright  by <strong>sG</strong></p>
+   </footer>
+</div>
+
+</body>
+</html>

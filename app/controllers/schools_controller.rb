@@ -102,6 +102,7 @@ end
 #school log out page
 def logout
   session[:user]=nil
+session[:ts_email]=nil
   redirect_to "/schools/homepage",sussces:"you are susscesfully  logout"
 end
 # taking sign up form data into params

@@ -18,14 +18,18 @@ get '/schools/school_activation'
 get '/schools/total_school'
 get '/schools/school_delete'
 get '/passwords/forgot_password'
- post  "/passwords/send_password"
+post  "/passwords/send_password"
 get '/passwords/reset_password'
 post '/passwords/new_password'
 get '/school_images/total_image'
 get "/school_images/delete_image"
 post "/teachers/teacher_reg"
 get "/teachers/teacher_profile"
-post 'teachers/teacher_profile_upload'
+post '/teachers/teacher_profile_upload'
+get '/teachers/teacher_home'
+post 'teachers/teacher_image_upload'
+get '/teachers/teacher_signin'
+post '/teachers/teacher_login'
 get '/teachers/total_image'
 get "/teachers/delete_image"
 #map.connect
