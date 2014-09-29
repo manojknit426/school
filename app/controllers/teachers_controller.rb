@@ -30,9 +30,10 @@ def teacher_login
    user = Teacher.auth(email,password)
  
   if user
+    session[:ts_email]=email
     profile=Teacher.find_by_email(email).is_profile 
   if profile==0
-   session[:ts_email]=email
+   
   
    #session[:school_name]=School.find_by_email(email).SCHOOL_NAME
 
@@ -69,6 +70,7 @@ def teacher_home
   @teacher=TeacherProfile.new
   @teacher=TeacherProfile.find_by t_email:session[:ts_email]
 @teacher_img=TeacherImage.find_by email:@teacher.t_email
+render layout: 'teacher_home'
 end
 
 def teacher_image_upload

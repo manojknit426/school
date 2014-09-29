@@ -37,10 +37,10 @@
    			<div class="panel-heading">
    				<div class="panel-title">
    					<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="javascript:void()" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-pencil">Note</span></a></li>
-  <li><a href="#profile" role="tab" data-toggle="tab"><span  class="glyphicon glyphicon-list-alt">Assignment</span></a></li>
-  <li><a href="#messages" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-envelope">Messages</span></a></li>
-  <li><a href="#settings" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-dashboard">Quiz</span></a></li>
+  <li class="active"><a href="#note" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-pencil">Note</span></a></li>
+  <li><a href="#assign" role="tab" data-toggle="tab"><span  class="glyphicon glyphicon-list-alt">Assignment</span></a></li>
+  <li><a href="#message" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-envelope">Messages</span></a></li>
+  <li><a href="#quiz" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-dashboard">Quiz</span></a></li>
 </ul>
 
    					</div>
@@ -48,7 +48,39 @@
    				<div class="panel-body">
    					<div class="row">
    					
-   					<div class="col-md-10 col-md-offset-2" data-toggle=''>
+   					<div class="col-md-10 " >
+   					<div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="note">
+       
+              <form role="form" action="/schools/school_login" method="post" >
+  <div class="form-group">
+    
+    <div class="col-sm-12">
+   <textarea name="" class="form-control" id="note_text" placeholder="enter your note here"></textarea>
+   
+    </div>
+  </div>
+  <div class="form-group">
+    
+    <div class="col-sm-12" style="display: none" id="a">
+    <input type="text" name="user[email]" class="form-control"  placeholder="something">
+
+   
+    </div>
+  </div>
+     </form>      
+     
+         </div>
+         <div class="tab-pane fade" id="assign">
+       content for message
+        </div>
+      <div class="tab-pane fade" id="message">
+       content for message
+        </div>
+        <div class="tab-pane fade" id="quiz">
+        content for quiz
+        </div>
+        
    					</div>	
    				    </div>
    				</div>
@@ -63,7 +95,18 @@
    	
    	
    </div>	
-	
+	<script>
+		$(document).ready(function(){
+			$("#note_text").click(function(){
+				$('#a').show();
+				
+			});
+			
+			
+		});
+		
+		
+	</script>
 	
 	
 </div>
