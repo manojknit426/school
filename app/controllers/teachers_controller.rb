@@ -54,7 +54,7 @@ end
 def teacher_profile_upload
   @teacher = TeacherProfile.new(teacher_params)
 @teacher.is_profile=1
-@teacher.email=session[:ts_email]
+@teacher.t_email=session[:ts_email]
 if @teacher.save
 @active= Teacher.find_by_email(session[:ts_email]).update_attribute :is_profile, 1
  redirect_to '/teachers/teacher_home' ,sussces: 'profile create'
@@ -67,8 +67,8 @@ end
 end
 def teacher_home
   @teacher=TeacherProfile.new
-  @teacher=TeacherProfile.find_by email:session[:ts_email]
-@teacher_img=TeacherImage.find_by email:@teacher.email
+  @teacher=TeacherProfile.find_by t_email:session[:ts_email]
+@teacher_img=TeacherImage.find_by email:@teacher.t_email
 end
 
 def teacher_image_upload
@@ -109,6 +109,6 @@ def user_params
   end
 def teacher_params
    
-    params.require(:schooldata).permit(:name,:lastname,:t_mobile,:grade,:subject)
+    params.require(:schooldata).permit(:t_name,:lastname,:t_mobile,:grade,:subject)
   end
 end
