@@ -1,0 +1,7 @@
+$('#question').val('');
+$('#a').val('');
+$('#b').val('');
+$('#c').val('');
+$('#d').val('');
+$('#submit').val('add another question');
+$('#q_append').append('<li><a href="quizzes/show_question?id=<%= @quiz.id%>" data-remote="true"><%= @quiz.id%></a></li>');

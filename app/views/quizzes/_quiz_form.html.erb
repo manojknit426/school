@@ -1,0 +1,71 @@
+<form class="form-horizontal" role="form" action="/quizzes/update_quiz" method="post"  >
+                   
+                    <div class="form-group">
+                         <label for="question" class="col-sm-2 control-label">Question</label>
+                           <div class="col-sm-10">
+                              <textarea class="form-control" name="quizdata[question]" id="question" placeholder="Write question here" require ><%=@quiz.question%></textarea>
+                           </div>
+                    </div>
+                   
+                    <div class="form-group">
+                       <label for="a" class="col-sm-2 control-label">A:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[a]" class="form-control" id="a" value="<%=@quiz.a%>" placeholder="Option1">
+                          </div>
+                    </div>
+                   
+                   <div class="form-group">
+                       <label for="inputEmail3" class="col-sm-2 control-label">B:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[b]" class="form-control" id="b" value="<%=@quiz.b%>" placeholder="Option2">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       <label for="c" class="col-sm-2 control-label">C:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[c]" class="form-control" id="c" value="<%=@quiz.c%>"  placeholder="Optin3">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       <label for="d" class="col-sm-2 control-label">D:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[d]" class="form-control" id="d" value="<%=@quiz.d%>"  placeholder="Option4">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       
+            <label for="radio" class=" col-sm-2 control-label input-group ">Answer</label>
+              <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-default active">
+                  <input type="radio" name="quizdata[answer]" value="A">A
+                       </label>
+                  <label class="btn btn-default">
+                 <input type="radio" name="quizdata[answer]" value="B">B
+                     </label>
+                  <label class="btn btn-default ">
+                   <input type="radio" name="quizdata[answer]" value="C">C
+                    </label>
+                     <label class="btn btn-default">
+                   <input type="radio" name="quizdata[answer]" value="D">D
+                    </label>
+                   </div>
+                            
+                          </div>
+                   <div class="form-group">
+                          <div class="col-sm-4 col-sm-offset-2">
+                            <input type="hidden"  class="form-control" name="quizdata[id]" id="hidden" value="<%=@quiz.id%>" >
+                          </div>
+                    </div>
+                   <div class="form-group">
+                          <div class="col-sm-4 col-sm-offset-2">
+                            <input type="submit"  class="form-control btn btn-primary" id="submit" value="update Question" >
+                          </div>
+                    </div>
+               </form>    
+                   
+                  
+		   

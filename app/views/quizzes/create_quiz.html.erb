@@ -1,0 +1,156 @@
+<div class="container" >
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				Question added
+				</div>
+				<div class="panel-body" id="q_added">
+									
+					<div class="bs-example">
+                        <ul class="nav nav-pills nav-stacked" id="q_append">
+                           <% @quiz.each do |quiz| %>
+
+                            <li><a href="/quizzes/edit_quiz?id=<%= quiz.id%>" class="active" data-remote='true'><%= quiz.id%></a></li>
+                          <%end%>
+                        </ul>
+                     </div>
+					
+				</div> 
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div class="row">
+			<form class="form-horizontal" role="form" action="/quizzes/add_quiz" method="post" data-remote='true' >
+ 
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="form-group">
+                     
+                       <label for="time_limit" class="col-sm-2 control-label small">Quiz time</label>
+                          
+                          <div class="col-sm-3">
+                            <input type="text" name="quizdata[time_limit]" class="form-control" id="time_limit" placeholder="Quiz Time in min ">
+                          </div>
+                      <label for="mark" class="col-sm-2 control-label small">mark</label>
+                          
+                          <div class="col-sm-2">
+                            <input type="number" name="quizdata[mark]" class="form-control" id="mark" value="2" placeholder="mark">
+                          </div>
+                          </div>
+					<div class="panel-title">
+					<div class="form-group">
+                     
+                      
+                          <label for="q_id" class="col-sm-2 control-label small">quiz id</label>
+                          
+                          <div class="col-sm-3">
+                            <input type="text" name="quizdata[q_id]" class="form-control" id="q_id" placeholder="quiz id">
+                          </div>
+                          
+                    </div>	
+					</div>
+				</div>
+			<div class="panel-body" id="edit">
+				     <div class="form-group">
+                         <label for="question" class="col-sm-2 control-label">Question</label>
+                           <div class="col-sm-10">
+                              <textarea class="form-control" name="quizdata[question]" id="question" placeholder="Write question here" require></textarea>
+                           </div>
+                    </div>
+                   
+                    <div class="form-group">
+                       <label for="a" class="col-sm-2 control-label">A:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[a]" class="form-control" id="a" placeholder="Option1">
+                          </div>
+                    </div>
+                   
+                   <div class="form-group">
+                       <label for="inputEmail3" class="col-sm-2 control-label">B:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[b]" class="form-control" id="b" placeholder="Option2">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       <label for="c" class="col-sm-2 control-label">C:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[c]" class="form-control" id="c" placeholder="Optin3">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       <label for="d" class="col-sm-2 control-label">D:</label>
+                          
+                          <div class="col-sm-5">
+                            <input type="text" name="quizdata[d]" class="form-control" id="d" placeholder="Option4">
+                          </div>
+                    </div>
+                   <div class="form-group">
+                       
+            <label for="year" class=" col-sm-2 control-label input-group ">Answer</label>
+              <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-default active">
+                  <input type="radio" name="quizdata[answer]" value="A">A
+                       </label>
+                  <label class="btn btn-default">
+                 <input type="radio" name="quizdata[answer]" value="B">B
+                     </label>
+                  <label class="btn btn-default ">
+                   <input type="radio" name="quizdata[answer]" value="C">C
+                    </label>
+                     <label class="btn btn-default">
+                   <input type="radio" name="quizdata[answer]" value="D">D
+                    </label>
+                   </div>
+                            
+                          </div>
+                   
+                   <div class="form-group">
+                          <div class="col-sm-4 col-sm-offset-2">
+                            <input type="submit"  class="form-control btn btn-primary" id="submit" value="Add Question" >
+                          </div>
+                    </div>
+                   
+                   
+                  
+		   </div>
+			</div>
+		 </form>
+		</div>
+<div class="row" id="edit_row" style="display: none">
+	
+<div class="panel panel-default" >
+	<div class="panel-body" id="test" >
+				
+    </div>
+			
+   </div>
+		
+</div>
+	
+	
+	
+
+		
+		
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
+<script>
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				$('#submit').val("adding...");
+				
+			});
+			
+			
+		});
+		
+		
+	</script>
+	
+</div>

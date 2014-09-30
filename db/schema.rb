@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929092232) do
+ActiveRecord::Schema.define(version: 20140929233653) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -42,6 +42,24 @@ ActiveRecord::Schema.define(version: 20140929092232) do
   create_table "checks", id: false, force: true do |t|
     t.string  "cc", null: false
     t.integer "dd", null: false
+  end
+
+  create_table "quizzes", force: true do |t|
+    t.text     "question"
+    t.string   "a"
+    t.string   "b"
+    t.string   "c"
+    t.string   "d"
+    t.string   "e"
+    t.string   "f"
+    t.string   "answer"
+    t.string   "email"
+    t.string   "time_limit"
+    t.string   "total_time"
+    t.integer  "mark"
+    t.integer  "total_mark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "result_master", id: false, force: true do |t|
@@ -180,8 +198,8 @@ ActiveRecord::Schema.define(version: 20140929092232) do
     t.string   "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
-    t.string   "name"
+    t.string   "t_email"
+    t.string   "t_name"
     t.integer  "t_mobile",   limit: 8
     t.integer  "is_profile",           default: 0
   end

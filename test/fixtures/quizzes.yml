@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyText
+  a: MyString
+  b: MyString
+  c: MyString
+  d: MyString
+  e: MyString
+  f: MyString
+  answer: MyString
+  email: MyString
+  time_limit: MyString
+  total_time: MyString
+  mark: 1
+  total_mark: 1
+
+two:
+  question: MyText
+  a: MyString
+  b: MyString
+  c: MyString
+  d: MyString
+  e: MyString
+  f: MyString
+  answer: MyString
+  email: MyString
+  time_limit: MyString
+  total_time: MyString
+  mark: 1
+  total_mark: 1

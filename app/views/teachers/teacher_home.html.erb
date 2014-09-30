@@ -12,7 +12,7 @@
    				<div class="panel-body">
    				        <div class="row">
    				   	          <div class="col-md-4" >
-   				   	        <img class="img-responsive" style="height: 50px; width:50px%"  src="<%=@teacher_img.image_url%>"   />
+   				   	        <img class="img-responsive" style="height: 50px; width:50px;border-radius: 5px;"  src="<%=@teacher_img.image_url%>"   />
    				   	             </div>
    				             <div class="col-md-8" style="margin: 0px;padding: 0px" >
    				      	        <div class="text-left text-capitalize h4" style="margin-top: 10px">
@@ -78,7 +78,7 @@
        content for message
         </div>
         <div class="tab-pane fade" id="quiz">
-        content for quiz
+        <a href="/quizzes/create_quiz" class="btn btn-primary"> <span class="glyphicon glyphicon-plus">Create Quiz</span></a>
         </div>
         
    					</div>	
