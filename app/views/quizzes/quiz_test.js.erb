@@ -1,0 +1,3 @@
+$('#user').html('<%= escape_javascript render('quiz_test') %>');
+
+$('#paginator').html('<%= escape_javascript(paginate(@quiz, :remote => true).to_s) %>');

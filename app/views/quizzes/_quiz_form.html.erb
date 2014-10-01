@@ -37,20 +37,49 @@
                           </div>
                     </div>
                    <div class="form-group">
-                       
+                    <script>
+              	$(document).ready(function(){
+              // alert('its call A'); 
+              var v='<%=@quiz.answer%>';
+              if(v=='A'){
+               $('#A').attr('checked',true);
+                }
+               if(v=='B'){
+              
+             $('#B').attr('checked',true);
+              
+               }
+              
+               if(v=='C'){
+             
+             $('#C').attr('checked',true);
+              
+               }
+              
+               if(v=='D'){
+             
+             $('#D').attr('checked',true);
+              
+               }
+              
+               
+                
+                                  });
+              	
+              </script>    
             <label for="radio" class=" col-sm-2 control-label input-group ">Answer</label>
-              <div class="btn-group" data-toggle="buttons">
-                  <label class="btn btn-default active">
-                  <input type="radio" name="quizdata[answer]" value="A">A
+              <div>
+                  <label class="control-label" >
+                  <input type="radio" name="quizdata[answer]" value="A" id="A">A
                        </label>
-                  <label class="btn btn-default">
-                 <input type="radio" name="quizdata[answer]" value="B">B
+                  <label class="control-label" >
+                 <input type="radio" name="quizdata[answer]" value="B" id="B" >B
                      </label>
-                  <label class="btn btn-default ">
-                   <input type="radio" name="quizdata[answer]" value="C">C
+                  <label class="control-label" >
+                   <input type="radio" name="quizdata[answer]" value="C" id="C">C
                     </label>
-                     <label class="btn btn-default">
-                   <input type="radio" name="quizdata[answer]" value="D">D
+                     <label class="control-label" >
+                   <input type="radio" name="quizdata[answer]" value="D" id="D">D
                     </label>
                    </div>
                             

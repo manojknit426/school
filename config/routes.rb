@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/quizzes/add_quiz'
   get '/quizzes/edit_quiz'
  post '/quizzes/update_quiz'
+get '/quizzes/quiz_test'
   get '/passwords/forgot_password'
 
   match '/signup',  to: 'schools#school_signup',   as: :signup ,  via: 'get'
