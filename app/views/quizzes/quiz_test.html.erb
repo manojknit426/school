@@ -1,15 +1,15 @@
 <div class="container">
-	
+	<script> $('#panel').countdown({until: 700});</script>
 	<div class="row">
 		<div class="col-md-3">
 			
 		</div>
 		   <div class="col-md-7">
-		    <form class="form-horizontal" role="form" action="/schools/school_login" method="post" >
+		    <form class="form-horizontal" role="form" action="/quizzes/quiz_answer" method="post" id="answer_form"  data-remote='true'>
 		   	<div class="row">
 		   	 <div class="panel panel-default">
 		   	 	<div class="panel-heading">
-		   	 		<div class="panel-title">
+		   	 		<div class="panel-title" id="panel">
 		   	 			
 		   	 		</div>
 		   	 		<div class="panel-body" >
@@ -25,12 +25,12 @@
                                    </div>
                                  </div>
                             <div class="form-group">
-             
+               <input type="hidden" name="quizdata[question_id]"  value="<%=quiz.id%>"/>
               
-               <label>A: <input type="radio" name="group1" value="A" class="control-label"> </label><%=quiz.a%><br>
-              <label>B: <input type="radio" name="group1" value="B" class="control-label"> </label><%=quiz.b%><br>
-              <label>C: <input type="radio" name="group1" value="C" class="control-label"> </label><%=quiz.c%><br>
-              <label>D: <input type="radio" name="group1" value="D" class="control-label"> </label><%=quiz.d%><br>
+               <label >A: <input type="radio" name="quizdata[answer]" value="A" class="control-label"> </label><%=quiz.a%><br>
+              <label>B: <input type="radio" name="quizdata[answer]" value="B" class="control-label"> </label><%=quiz.b%><br>
+              <label>C: <input type="radio" name="quizdata[answer]" value="C" class="control-label"> </label><%=quiz.c%><br>
+              <label>D: <input type="radio" name="quizdata[answer]" value="D" class="control-label"> </label><%=quiz.d%><br>
 
                                    </div>
                                
@@ -49,7 +49,7 @@
 		<div class="row">
 		   	 	<div class="form-group">
                       <div class="col-sm-10" id='paginator'>
-                         <%= paginate @quiz, :remote => true %>         
+                         <%= paginate @quiz%>         
                            </div>
                         </div>
 		   	 	
@@ -57,8 +57,17 @@
 	
 		</form>
 		 </div>
-		   <div class="col-md-2" id="here"></div>
+		   <div class="col-md-2" id="here">
+		   	
+		   	
+		   </div>
 	
 	</div>
-	
+	<script>
+	$('.form_sub').click(function(){
+$('#answer_form').submit();
+});	
+		
+		
+	</script>
 </div>

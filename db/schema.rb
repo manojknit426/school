@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929233653) do
+ActiveRecord::Schema.define(version: 20141002010728) do
 
   create_table "address_master", primary_key: "address_id", force: true do |t|
     t.string   "reference_Id"
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(version: 20140929233653) do
   create_table "checks", id: false, force: true do |t|
     t.string  "cc", null: false
     t.integer "dd", null: false
+  end
+
+  create_table "quiz_answers", force: true do |t|
+    t.string   "quiz_id"
+    t.string   "email"
+    t.string   "student_id"
+    t.string   "techer_id"
+    t.string   "question_id"
+    t.string   "answer"
+    t.string   "student_email"
+    t.string   "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "quizzes", force: true do |t|
