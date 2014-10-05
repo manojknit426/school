@@ -1,13 +1,36 @@
 class QuizzesController < ApplicationController
+  def quiz_data
+    @quiz=QuizData.new
+  
+  end
+ 
+ 
+  def quiz_data_insert
+   
+    @quiz=QuizData.new(quiz_params_d)
+ quiz_id=rand(100...1000000)
+  @quiz.email=session[:ts_email]
+ @quiz.id=quiz_id
+  session[:quiz_id]=quiz_id
+  if @quiz.save
+   redirect_to '/quizzes/create_quiz'
+  end
+  end
   def create_quiz
+ if params['id']
+   session[:quiz_id]=params['id']
+ end
  @quiz=Quiz.new
- @quiz=Quiz.where(email: session[:ts_email]).to_a
+ @quiz=Quiz.where(quiz_data_id: session[:quiz_id]).to_a
 @teacher_img=TeacherImage.find_by email: session[:ts_email]
+@quiz_data=QuizData.find_by_id(session[:quiz_id])
+ 
  render layout: 'teacher_home'
   end
 def add_quiz
   @quiz=Quiz.new(quiz_params)
   @quiz.email=session[:ts_email]
+ @quiz.quiz_data_id=session[:quiz_id]
   if @quiz.save
     respond_to do |format|
       format.html { redirect_to '/teachers/teacher_profile' }
@@ -35,10 +58,12 @@ end
  
  def quiz_test
     @quiz=Quiz.new
- @quiz=Quiz.where(email: session[:ts_email]).page(params[:page]).per(1)
+ @quiz=Quiz.where(quiz_data_id: session[:quiz_id]).page(params[:page]).per(1)
    @teacher_img=TeacherImage.find_by email: session[:ts_email]
- @quiz_ans=QuizAnswer.all
+# @quiz_ans=QuizAnswer.all
  render layout: 'teacher_home'
+
+ 
  end
 def quiz_answer
  
@@ -75,6 +100,10 @@ end
  end 
 def quiz_params_a
    params.require(:quizdata).permit(:answer,:question_id)
+
+ end 
+ def quiz_params_d
+   params.require(:quizdata).permit(:quiz_name,:total_mark,:total_time)
 
  end 
 end

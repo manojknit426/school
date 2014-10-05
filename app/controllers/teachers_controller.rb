@@ -69,8 +69,9 @@ end
 def teacher_home
   @teacher=TeacherProfile.new
   @teacher=TeacherProfile.find_by t_email:session[:ts_email]
-@teacher_img=TeacherImage.find_by email:@teacher.t_email
-render layout: 'teacher_home'
+   @teacher_img=TeacherImage.find_by email:@teacher.t_email
+  @quiz=QuizData.where(email: session[:ts_email])
+  render layout: 'teacher_home'
 end
 
 def teacher_image_upload

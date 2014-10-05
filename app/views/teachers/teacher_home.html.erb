@@ -78,7 +78,44 @@
        content for message
         </div>
         <div class="tab-pane fade" id="quiz">
-        <a href="/quizzes/create_quiz" class="btn btn-primary"> <span class="glyphicon glyphicon-plus">Create Quiz</span></a>
+
+        <span><a href="/quizzes/quiz_data" ><span class="glyphicon glyphicon-plus btn btn-primary">Create New Quiz</span></a></span>  or <span> <a href="" data-toggle="modal" data-target="#myModal"> Load a previously created Quiz</a></span>
+        
+        	
+        	
+       
+      <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Total Quiz</h4>
+      </div>
+      <div class="modal-body">
+       <ul>
+        	<%if @quiz%>
+        	<%@quiz.each do |quiz|%>
+        	
+        	<li>
+        	<div>
+        	<span style="color: blue"><%=quiz.quiz_name%></span></br>
+        	<a href="/quizzes/create_quiz?id=<%=quiz.id%>">Edit</a>  
+        	<a href="/quizzes/create_quiz?id=<%=quiz.id%>">delete</a>
+        	</div>
+        	</li>
+        	
+        	<%end%>
+        	<%end%>
+        	</ul>
+      </div>
+     
+    </div>
+  </div>
+</div>
         </div>
         
    					</div>	

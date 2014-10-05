@@ -1,4 +1,4 @@
- <form class="form-horizontal" role="form" action="/quizzes/quiz_answer" method="post" id="answer_form" >
+ <form class="form-horizontal" role="form" action="/quizzes/quiz_answer" method="post" id="answer_form"  data-remote='true'
                             <% @quiz.each do |quiz| %>
                            <label for="inputEmail3" class="control-label"> question: <%=quiz.id%> </label>
 
@@ -19,12 +19,14 @@
                                    </div>
                                
 		   	 			<%end%>	
-		   	 			
+		   	 		 <div class="form-group">
+                                  <div class="col-sm-10">
+                                   <input type="submit"  value="confirm"/>       
+                                
+                                   </div>
+                                 </div>	
 		   	 			</form>
 <script>
-	$('#cc').click(function(){
-alert('call next');
+	$('.form_sub').click(function(){
+$('#answer_form').submit();
 });	
-		
-		
-	</script>

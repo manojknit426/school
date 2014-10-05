@@ -3,7 +3,7 @@
                     <div class="form-group">
                          <label for="question" class="col-sm-2 control-label">Question</label>
                            <div class="col-sm-10">
-                              <textarea class="form-control" name="quizdata[question]" id="question" placeholder="Write question here" require ><%=@quiz.question%></textarea>
+                              <textarea class="form-control" name="quizdata[question]" id="question" placeholder="Write question here" required ><%=@quiz.question%></textarea>
                            </div>
                     </div>
                    
@@ -11,7 +11,7 @@
                        <label for="a" class="col-sm-2 control-label">A:</label>
                           
                           <div class="col-sm-5">
-                            <input type="text" name="quizdata[a]" class="form-control" id="a" value="<%=@quiz.a%>" placeholder="Option1">
+                            <input type="text" name="quizdata[a]" class="form-control" id="a" value="<%=@quiz.a%>" placeholder="Option1" required>
                           </div>
                     </div>
                    
@@ -19,21 +19,21 @@
                        <label for="inputEmail3" class="col-sm-2 control-label">B:</label>
                           
                             <div class="col-sm-5">
-                            <input type="text" name="quizdata[b]" class="form-control" id="b" value="<%=@quiz.b%>" placeholder="Option2">
+                            <input type="text" name="quizdata[b]" class="form-control" id="b" value="<%=@quiz.b%>" placeholder="Option2" required>
                           </div>
                     </div>
                    <div class="form-group">
                        <label for="c" class="col-sm-2 control-label">C:</label>
                           
                           <div class="col-sm-5">
-                            <input type="text" name="quizdata[c]" class="form-control" id="c" value="<%=@quiz.c%>"  placeholder="Optin3">
+                            <input type="text" name="quizdata[c]" class="form-control" id="c" value="<%=@quiz.c%>"  placeholder="Optin3" required>
                           </div>
                     </div>
                    <div class="form-group">
                        <label for="d" class="col-sm-2 control-label">D:</label>
                           
                           <div class="col-sm-5">
-                            <input type="text" name="quizdata[d]" class="form-control" id="d" value="<%=@quiz.d%>"  placeholder="Option4">
+                            <input type="text" name="quizdata[d]" class="form-control" id="d" value="<%=@quiz.d%>"  placeholder="Option4" required>
                           </div>
                     </div>
                    <div class="form-group">
@@ -90,8 +90,14 @@
                           </div>
                     </div>
                    <div class="form-group">
-                          <div class="col-sm-4 col-sm-offset-2">
+                          <div class="col-sm-8 col-sm-offset-2">
+                            <div class="col-sm-5">
                             <input type="submit"  class="form-control btn btn-primary" id="submit" value="update Question" >
+                            </div>
+                            <div class="col-sm-3" style="margin: 0px;padding: 0px">
+ 
+                        <a href="/quizzes/create_quiz" class="btn btn-primary">cancel</a>
+                         </div>
                           </div>
                     </div>
                </form>    

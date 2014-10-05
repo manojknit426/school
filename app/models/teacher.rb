@@ -1,5 +1,6 @@
 class Teacher < ActiveRecord::Base
-#has_one :teacher_profile
+has_one :teacher_profile
+
 has_secure_password 
  validates_uniqueness_of :email
 

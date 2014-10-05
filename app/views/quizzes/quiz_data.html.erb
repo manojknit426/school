@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 col-md-offset-2">
+   <div class="panel panel-default">
+   	  <div class="panel-heading">
+   	  	<div class="panel-title">
+   	  		
+   	  	</div>
+   	   <div class="panel-body">
+   	   	<form class="form-horizontal" role="form" action="/quizzes/quiz_data_insert" method="post">
+					<div class="form-group">
+                     
+                       <label for="quiz_name" class="col-sm-2 control-label small">Quiz Name</label>
+                          
+                          <div class="col-sm-3">
+                            <input type="text" name="quizdata[quiz_name]" class="form-control" id="quiz_name" placeholder="Give a name" required="">
+                          </div>
+                      <label for="total_mark" class="col-sm-2 control-label small">Total Mark</label>
+                          
+                          <div class="col-sm-2">
+                            <input type="number" name="quizdata[total_mark]" class="form-control" id="total_mark" value="2" placeholder="mark" required="">
+                          </div>
+                   </div>
+			      <div class="form-group">
+                     
+                       <label for="total_time" class="col-sm-2 control-label small">Total time</label>
+                          
+                          <div class="col-sm-3">
+                            <input type="text" name="quizdata[total_time]" class="form-control" id="total_time" placeholder="Total time" required="">
+                          </div>
+                    </div>
+                    <div class="form-group">
+                     
+                                                
+                          <div class="col-sm-3 col-md-offset-2">
+                            <input type="submit" value="create" class="btn btn-primary" />
+                        </div>
+			       </div>
+			</form>
+   	   	
+   	   </div>
+   	  </div>
+   </div>
+</div>
+</div>
+
+</div>

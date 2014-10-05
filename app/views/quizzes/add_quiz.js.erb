@@ -4,4 +4,4 @@ $('#b').val('');
 $('#c').val('');
 $('#d').val('');
 $('#submit').val('add another question');
-$('#q_append').append('<li><a href="/quizzes/edit_quiz?id=<%= @quiz.id%>" data-remote="true"><%= @quiz.id%></a></li>');
+$('#q_append').append('<li><a href="/quizzes/edit_quiz?id=<%= @quiz.id%>" data-remote="true">Ques no:<%= session[:index]+1%></a></li>');
