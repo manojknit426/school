@@ -27,7 +27,7 @@
    		 </div>
    		</div>
    <div class="row">
-   	<div class="col-md-12 well"></div>
+   	<div class="col-md-12 well">left down content</div>
    </div>
    	</div>
    	<div class="col-md-7">
@@ -52,22 +52,33 @@
    					<div id="myTabContent" class="tab-content">
       <div class="tab-pane fade in active" id="note">
        
-              <form role="form" action="/schools/school_login" method="post" >
+              <form role="form" action="/notes/add_note" method="post" data-remote='true'>
   <div class="form-group">
     
     <div class="col-sm-12">
-   <textarea name="" class="form-control" id="note_text" placeholder="enter your note here"></textarea>
+  
+   <textarea  class="form-control" id="note_text" placeholder="enter your note here" name="notedata[notes]" required></textarea>
    
     </div>
+  
   </div>
   <div class="form-group">
     
-    <div class="col-sm-12" style="display: none" id="a">
-    <input type="text" name="user[email]" class="form-control"  placeholder="something">
+    <div class="col-sm-12 a"  style="display: none">
+    <input type="search"  class="form-control"  placeholder="Name of student or Class" required="">
 
    
     </div>
   </div>
+    <div class="form-group">
+    
+    <div class="col-sm-3" >
+    <input type="submit"  class="a form-control btn btn-primary" id="note_submit" style="display: none" value="craate  note">
+
+   
+    </div>
+  </div>
+    
      </form>      
      
          </div>
@@ -124,26 +135,63 @@
    			</div>
    			</div>
    		</div>
-   	
-   	<div class="col-md-2">
+   	<div class="row">
    		
+   			<div class="panel panel-default">
+   				<div class="panel-body" id="note_added">
+   					
+   						<%if @note%>
+        	<%@note.each do |note|%>
+        	
+        	<div class="row panel panel-default" >
+        	  <div class="col-md-2" style="margin: 0px ;padding: 0px; ">
+        	  	<img class="img-responsive "  style="float:left; height: 50px; width:50px;border-radius: 5px ;margin-left: 40px"  src="<%=@teacher_img.image_url%>"   />
+        	  </div>  	
+        	<div class="col-md-9 text-left" style="margin: 0px; padding: 0px"><span class=""><%=note.created_at%></span><br />
+        	  	<span class="text-left" style="word-wrap:break-word"><%=note.notes%> 
+        	 </div>  
+        	<div class="col-md-1 close">
+        	  	<a href="/notes/delete_note?id=<%=note.id%>" data-reomte='true'>&times;</a>
+        	  </div>  
+        	
+        	</div>
+        	<%end%>
+        	<%end%>
+   						
+   					
+   					
+   				</div>
+   			</div>
+   		
+   		
+   		
+   		
+   		
+   		
+   	</div>
+   	</div>
+   	<div class="col-md-2">
+   	right content	
    	</div>
    	
    	
    	
-   </div>	
+   	
 	<script>
 		$(document).ready(function(){
 			$("#note_text").click(function(){
-				$('#a').show();
+				$('.a').show();
 				
 			});
-			
+			$("#note_submit").click(function(){
+				
+				$(this).val('loding....');
+			});
 			
 		});
 		
 		
 	</script>
-	
+	</div>
 	
 </div>

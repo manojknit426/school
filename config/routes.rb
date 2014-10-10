@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'notes/create_note'
+
+  post 'notes/add_note'
+
+  get 'notes/delete_note'
+
+  get 'notes/show_note'
+
   get '/quizzes/create_quiz'
   post '/quizzes/add_quiz'
   get '/quizzes/edit_quiz'

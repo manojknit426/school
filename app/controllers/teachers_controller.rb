@@ -71,6 +71,7 @@ def teacher_home
   @teacher=TeacherProfile.find_by t_email:session[:ts_email]
    @teacher_img=TeacherImage.find_by email:@teacher.t_email
   @quiz=QuizData.where(email: session[:ts_email])
+ @note=Note.order("id DESC").where(email: session[:ts_email])
   render layout: 'teacher_home'
 end
 
@@ -90,7 +91,7 @@ image= params[:user][:image]
  
   if @teacher.save
   respond_to do |format|
-      format.html { redirect_to '/signup' ,error: @teacher.errors.to_a}
+      format.html { redirect_to '/teachers/teacher_home' }
       format.js
           end
 end
