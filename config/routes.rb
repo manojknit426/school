@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+get'/students/student_home'
+ get  "/students/student_profile"
+ get '/students/student_profile'
+  post "/students/student_reg"
+  post '/students/student_profile_upload'
+post "/students/student_image_upload"
+  get '/notes/create_note'
 
-  get 'notes/create_note'
+  post '/notes/add_note'
 
-  post 'notes/add_note'
+  get '/notes/delete_note'
 
-  get 'notes/delete_note'
-
-  get 'notes/show_note'
+  get '/notes/show_note'
 
   get '/quizzes/create_quiz'
   post '/quizzes/add_quiz'
