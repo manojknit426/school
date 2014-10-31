@@ -1,12 +1,40 @@
-<div class="row panel panel-default" >
-        	  <div class="col-md-2" style="margin: 0px ;padding: 0px; ">
-        	  	<img class="img-responsive "  style="float:left; height: 50px; width:50px;border-radius: 5px ;margin-left: 40px"  src=""   />
+<div class="row" style="margin-left:0px" >
+        	  <div class="col-md-1"  >
+        	  	<img   style="height: 40px; width:40px;"  src="<%=current_user.teacher_image.image_url(:thumb)%>"   />
         	  </div>  	
-        	<div class="col-md-9 text-left" style="margin: 0px; padding: 0px">
-        	  	<span class="text-left" style="word-wrap:break-word"><%=@note.notes%> 
-        	 </div>  
-        	<div class="col-md-1">
-        	  	delete
-        	  </div>  
+        	<div class="col-md-10">
+        	  	 <div class="row">
+        	<span><%=current_user.teacher_profile.t_name%></span><br /><span class="h6 small"><%=@note.created_at.strftime("%A, %d %b %Y %l:%M %p")%></span><br />
+        	  	<span class="text-left" style="word-wrap:break-word"><%=@note.notes%> </span>
+        		</div>
+        	  		
+        	  		<div class="col-md-12" id="comment_<%=@note.id%>">
+        		
+        		
+        		    </div>
+        	  
         	
+        	<div class="row">
+        			<form role="form" action="/notes/comment_insert" method="post" data-remote="true">
+        			<div class="col-md-1"><img  src="<%=current_user.teacher_image.image_url(:thumb)%> " style="width: 35px;height: 35px;border-radius: 5px"/></div>
+        			<div class="col-md-10">
+        				<div class="input-group " style="margin-top: 4px">
+             <input type="text" id="text_<%=@note.id%>" name="commentdata[reply]" class="form-control" placeholder="Reply here.........">
+                 <input type="hidden" name="commentdata[note_id]"  value="<%=@note.id%>"/>
+                 <div class="input-group-btn">
+           <input type="submit" class="btn btn-primary" value="comment" id="searchsubmit" >
+                  </div>
+                 </div>
+        			</div>
+        		 </form>   
+        			</div>
+        	
+        		</div>
+        		
+        	<div class="col-md-1 close">
+        	  &times;
+        	  </div>  
         	</div>
+        	 
+        	 <hr />
+        	 

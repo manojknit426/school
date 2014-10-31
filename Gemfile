@@ -14,7 +14,7 @@ gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem 'mysql2'
+ gem 'sqlite3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

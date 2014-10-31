@@ -18,7 +18,8 @@
 //=require schools
 // Include all twitter's javascripts
 //= require twitter/bootstrap
- 
+ //require locationpicker.jquery
+//= require jquery.tokeninput
 // Or peek any of them yourself
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/alert

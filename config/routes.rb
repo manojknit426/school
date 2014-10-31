@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-get'/students/student_home'
- get  "/students/student_profile"
- get '/students/student_profile'
+get "teachers/index"
+get '/teachers/sendto_sugg'
+
+
+ get  "/students/student_new"
+
   post "/students/student_reg"
-  post '/students/student_profile_upload'
-post "/students/student_image_upload"
+  post '/students/student_create'
+get 'students/home'
+  post "/students/student_image_upload"
+  
+  
   get '/notes/create_note'
 
   post '/notes/add_note'
@@ -12,7 +18,7 @@ post "/students/student_image_upload"
   get '/notes/delete_note'
 
   get '/notes/show_note'
-
+post '/notes/comment_insert'
   get '/quizzes/create_quiz'
   post '/quizzes/add_quiz'
   get '/quizzes/edit_quiz'
@@ -52,6 +58,7 @@ get '/teachers/teacher_signin'
 post '/teachers/teacher_login'
 get '/teachers/total_image'
 get "/teachers/delete_image"
+get '/teachers/view_profile'
 #map.connect
   # See how all your routes lay out with "rake routes".
 

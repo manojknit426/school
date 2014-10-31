@@ -1,3 +1,5 @@
 class StudentImage < ActiveRecord::Base
-mount_uploader :image,StudentImageUploader
+belongs_to :student
+
+mount_uploader :image,ImageUploader
 end

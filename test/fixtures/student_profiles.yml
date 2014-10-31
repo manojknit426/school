@@ -3,19 +3,25 @@
 one:
   name: MyString
   lastname: MyString
-  mobile: 1
-  f_mobile: 1
-  class: MyString
-  schoolname: MyString
-  student_id: MyString
+  mobile: MyString
+  f_mobile: MyString
+  email: MyString
+  std: MyString
+  sec: MyString
+  student_id: 1
+  is_active: 1
   is_profile: 1
+  is_confirm: 1
 
 two:
   name: MyString
   lastname: MyString
-  mobile: 1
-  f_mobile: 1
-  class: MyString
-  schoolname: MyString
-  student_id: MyString
+  mobile: MyString
+  f_mobile: MyString
+  email: MyString
+  std: MyString
+  sec: MyString
+  student_id: 1
+  is_active: 1
   is_profile: 1
+  is_confirm: 1

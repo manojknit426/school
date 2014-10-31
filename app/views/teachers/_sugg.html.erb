@@ -1,0 +1,16 @@
+<ul class="nav nav-stacked">
+<%if @s.empty?%>
+<li>no suggestion</li>
+
+<%else%>
+<%@s.each do |s|%>
+<li>
+
+	<%=s.t_name%>  <%=s.lastname%>
+
+	
+</li>
+
+<%end%>
+<%end%>
+</ul>

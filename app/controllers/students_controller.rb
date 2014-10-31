@@ -1,15 +1,15 @@
 class StudentsController < ApplicationController
 def student_reg
 
-@student = Student.new(user_params)
+@student = Student.new(student_params)
 @student.activation_token=SecureRandom.urlsafe_base64
     
       if @student.save
  
  #ConfirmEmail.send_confirm_email(@school).deliver
-  session[:ss_id]=@student.student_main_id
+  session[:username]=@student.username
  
-  redirect_to '/students/student_profile'
+  redirect_to '/students/student_new'
    else 
     
      respond_to do |format|
@@ -19,56 +19,57 @@ def student_reg
       end
 end
 end
-def student_profile
-#  @student=StudentProfile.new
-  render layout: 'profile'    
+def student_new
+  @student =StudentProfile.new
 end
-def student_profile_upload
-  @student = StudentProfile.new(student_params)
+
+def student_create
+  @student = StudentProfile.new(student_profile_params)
 @student.is_profile=1
-@student.student_main_id=session[:ss_id]
+@student.student_id=current_student.id
+#@teacher.student_id=current_user.id
 if @student.save
-@student= Student.find_by_student_main_id(session[:ss_id]).update_attribute :is_profile, 1
- redirect_to '/student/student_home' ,sussces: 'profile create'
+@active= Student.find_by_username(session[:username]).update_attribute :is_profile, 1
+ redirect_to '/students/home' ,sussces: 'profile create'
 else
   respond_to do |format|
-      format.html { redirect_to '/student/student_profile' ,error: @student.errors.to_a}
+      format.html { redirect_to '/students/student_new' ,error: @student.errors.to_a}
  end     
 
 end
 end
 def student_image_upload
-image= params[:user][:image]
-   s_id=session[:ss_id]
-   @student= StudentImage.find_by_student_main_id(s_id)
+image= params[:studentimagedata][:image]
+   
+   @student= StudentImage.find_by_username(session[:username])
  if @student
   @student.update_attribute :image, image
  respond_to do |format|
-      format.html { redirect_to '/students/student_profile' }
+      format.html { redirect_to '/students/student_new' }
       format.js
           end
  else
   
-   @student=StudentImage.new :image => image,:student_main_id=> s_id
- 
+   @student=StudentImage.new :image => image,:username=>session[:username]
+    @student.student_id=current_student.id
   if @student.save
   respond_to do |format|
-      format.html { redirect_to '/students/student_home' }
+      format.html { redirect_to '/students/student_new' }
       format.js
           end
 end
 end
 end
- def student_home
-   
- end
 
-def user_params
-   
-    params.require(:user).permit(:student_main_id,:email,:password,:password_confirmation)
-  end
+def student_profile_params
+  params.require(:studentdata).permit(:name,:lastname,:mobile,:std)
+end
 def student_params
    
-    params.require(:schooldata).permit(:name,:lastname,:mobile,:class,:schoolname)
+    params.require(:user).permit(:username,:email,:password,:password_confirmation)
   end
+
+
+
+
 end

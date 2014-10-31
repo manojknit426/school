@@ -1,19 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  student_main_id: MyString
+  username: MyString
   email: MyString
   password_digest: MyString
   password_reset_token: MyString
+  password_expires: MyString
   activation_token: MyString
   is_active: 1
   is_profile: 1
+  is_confirm: 1
 
 two:
-  student_main_id: MyString
+  username: MyString
   email: MyString
   password_digest: MyString
   password_reset_token: MyString
+  password_expires: MyString
   activation_token: MyString
   is_active: 1
   is_profile: 1
+  is_confirm: 1

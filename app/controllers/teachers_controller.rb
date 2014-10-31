@@ -56,6 +56,7 @@ def teacher_profile_upload
   @teacher = TeacherProfile.new(teacher_params)
 @teacher.is_profile=1
 @teacher.t_email=session[:ts_email]
+@teacher.teacher_id=current_user.id
 if @teacher.save
 @active= Teacher.find_by_email(session[:ts_email]).update_attribute :is_profile, 1
  redirect_to '/teachers/teacher_home' ,sussces: 'profile create'
@@ -67,12 +68,16 @@ else
 end
 end
 def teacher_home
-  @teacher=TeacherProfile.new
-  @teacher=TeacherProfile.find_by t_email:session[:ts_email]
-   @teacher_img=TeacherImage.find_by email:@teacher.t_email
-  @quiz=QuizData.where(email: session[:ts_email])
- @note=Note.order("id DESC").where(email: session[:ts_email])
+  if current_user
+  @teacher=Teacher.new
+  @teacher=Teacher.find_by_email(session[:ts_email])
+   
+  
+ 
   render layout: 'teacher_home'
+else 
+  redirect_to "/teachers/teacher_signin"
+end
 end
 
 def teacher_image_upload
@@ -88,7 +93,7 @@ image= params[:user][:image]
  else
   
    @teacher=TeacherImage.new :image => image,:email=>s_email
- 
+    @teacher.teacher_id=current_user.id
   if @teacher.save
   respond_to do |format|
       format.html { redirect_to '/teachers/teacher_home' }
@@ -96,6 +101,9 @@ image= params[:user][:image]
           end
 end
 end
+end
+def view_profile
+  render layout: 'teacher_home'
 end
 def total_image
  @teacher=TeacherImage.new
@@ -106,6 +114,19 @@ def delete_image
   id=params['id']
   school=TeacherImage.destroy(id)
   redirect_to '/teachers/total_image'
+end
+def sendto_sugg
+  id=params['q']
+#@s=Teacher.all
+@s=TeacherProfile.where( 't_name like ? OR lastname like ?', id+"%","%"+id+"%")
+
+respond_to do |format|
+      format.html { redirect_to '/teachers/teacher_home' }
+      format.json{render :json=>@s.map(&:attributes)}
+          end
+end
+def index
+  
 end
 def user_params
    
